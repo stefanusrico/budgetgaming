@@ -55,8 +55,6 @@ body {
   color: hsl(var(--foreground));
 }
 
-
-
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -113,7 +111,23 @@ body {
   }
 }
 
+body {
+  @apply bg-background text-foreground;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
 
+/* Hide scrollbars for all elements */
+html,
+body {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer and Edge */
+}
+
+/* WebKit browsers (Chrome, Safari, etc.) */
+::-webkit-scrollbar {
+  display: none;
+}
 
 @layer base {
   * {

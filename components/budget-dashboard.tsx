@@ -1,23 +1,23 @@
 "use client"
 
-import { useState } from "react"
-import {
-  ChevronLeft,
-  ChevronRight,
-  Plus,
-  ShoppingBag,
-  Home,
-  Briefcase,
-} from "lucide-react"
+import { Avatar, AvatarFallback } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
-import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Card, CardContent } from "@/components/ui/card"
 import { Progress } from "@/components/ui/progress"
-import { Avatar, AvatarFallback } from "@/components/ui/avatar"
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import {
+  Briefcase,
+  ChevronLeft,
+  ChevronRight,
+  Home,
+  Plus,
+  ShoppingBag,
+} from "lucide-react"
+import { useState } from "react"
 
 export default function BudgetDashboard() {
   const [activeTab, setActiveTab] = useState("daily")
-  const [currentMonth, setCurrentMonth] = useState("January 2023")
+  const [currentMonth] = useState("January 2023")
 
   return (
     <div className="flex flex-col h-screen">
