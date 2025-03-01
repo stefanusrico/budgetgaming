@@ -13,7 +13,7 @@ import {
   Plus,
   ShoppingBag,
 } from "lucide-react"
-import { useState } from "react"
+import { ReactNode, useState } from "react"
 
 export default function BudgetDashboard() {
   const [activeTab, setActiveTab] = useState("daily")
@@ -241,7 +241,19 @@ export default function BudgetDashboard() {
   )
 }
 
-function FinancialCard({ title, amount, change, isPositive }) {
+interface FinancialCardProps {
+  title: string
+  amount: string
+  change: string
+  isPositive: boolean
+}
+
+function FinancialCard({
+  title,
+  amount,
+  change,
+  isPositive,
+}: FinancialCardProps) {
   return (
     <Card>
       <CardContent className="p-6">
@@ -259,7 +271,19 @@ function FinancialCard({ title, amount, change, isPositive }) {
   )
 }
 
-function BudgetProgressItem({ category, current, total, percentage }) {
+interface BudgetProgressItemProps {
+  category: string
+  current: number
+  total: number
+  percentage: number
+}
+
+function BudgetProgressItem({
+  category,
+  current,
+  total,
+  percentage,
+}: BudgetProgressItemProps) {
   return (
     <div className="space-y-2">
       <div className="flex items-center justify-between text-sm">
@@ -273,7 +297,21 @@ function BudgetProgressItem({ category, current, total, percentage }) {
   )
 }
 
-function TransactionItem({ icon, title, date, amount, isExpense }) {
+interface TransactionItemProps {
+  icon: ReactNode
+  title: string
+  date: string
+  amount: string
+  isExpense: boolean
+}
+
+function TransactionItem({
+  icon,
+  title,
+  date,
+  amount,
+  isExpense,
+}: TransactionItemProps) {
   return (
     <div className="flex items-center justify-between">
       <div className="flex items-center space-x-3">
