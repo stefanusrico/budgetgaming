@@ -17,7 +17,17 @@ import { useState } from "react"
 
 export default function BudgetDashboard() {
   const [activeTab, setActiveTab] = useState("daily")
-  const [currentMonth] = useState("January 2023")
+  const [currentMonth, setCurrentMonth] = useState("January 2023")
+
+  const handlePreviousMonth = () => {
+    // Simple implementation - in a real app, you'd calculate the actual previous month
+    setCurrentMonth("December 2022")
+  }
+
+  const handleNextMonth = () => {
+    // Simple implementation - in a real app, you'd calculate the actual next month
+    setCurrentMonth("February 2023")
+  }
 
   return (
     <div className="flex flex-col h-screen">
@@ -107,11 +117,11 @@ export default function BudgetDashboard() {
           </Tabs>
 
           <div className="flex items-center space-x-2">
-            <Button variant="ghost" size="icon">
+            <Button variant="ghost" size="icon" onClick={handlePreviousMonth}>
               <ChevronLeft className="h-4 w-4" />
             </Button>
             <span className="text-sm font-medium">{currentMonth}</span>
-            <Button variant="ghost" size="icon">
+            <Button variant="ghost" size="icon" onClick={handleNextMonth}>
               <ChevronRight className="h-4 w-4" />
             </Button>
           </div>
